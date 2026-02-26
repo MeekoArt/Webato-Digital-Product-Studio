@@ -15,14 +15,14 @@ export function Methodology() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Nosso Método</h2>
-          <p className="text-webato-muted text-lg max-w-2xl">
+          <p className="text-muted text-lg max-w-2xl">
             Um processo validado para transformar ideias em produtos reais e escaláveis.
           </p>
         </div>
 
         <div className="relative">
           {/* Connecting Line */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-white/10 -translate-y-1/2" />
+          <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-border -translate-y-1/2" />
           
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {steps.map((step, index) => (
@@ -34,11 +34,11 @@ export function Methodology() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative z-10 flex flex-col items-start md:items-center text-left md:text-center group"
               >
-                <div className="w-16 h-16 rounded-full bg-[#0F172A] border-2 border-white/10 flex items-center justify-center mb-6 group-hover:border-webato-accent group-hover:text-webato-accent transition-colors">
+                <div className="w-16 h-16 rounded-full bg-bg border-2 border-border flex items-center justify-center mb-6 group-hover:border-brand group-hover:text-brand transition-colors group-hover:shadow-[0_0_15px_var(--color-glow)]">
                   <span className="text-xl font-bold font-mono">{step.num}</span>
                 </div>
                 <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                <p className="text-sm text-webato-muted">{step.desc}</p>
+                <p className="text-sm text-muted">{step.desc}</p>
               </motion.div>
             ))}
           </div>

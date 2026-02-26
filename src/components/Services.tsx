@@ -27,12 +27,12 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicos" className="py-24 bg-white/[0.02] border-y border-white/5">
+    <section id="servicos" className="py-24 bg-surface border-y border-border">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">O Que Fazemos</h2>
-          <p className="text-webato-muted text-lg">
-            A Webato é um estúdio de produtos digitais focado em engenharia, crescimento e inovação.
+          <p className="text-muted text-lg">
+            A WebAto é um estúdio de produtos digitais focado em engenharia, crescimento e inovação.
           </p>
         </div>
 
@@ -44,14 +44,14 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex gap-6 p-6 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+              className="flex gap-6 p-6 rounded-2xl hover:bg-surface-2 transition-colors border border-transparent hover:border-border group"
             >
-              <div className="shrink-0 w-14 h-14 rounded-xl bg-webato-secondary/20 text-webato-accent flex items-center justify-center">
+              <div className="shrink-0 w-14 h-14 rounded-xl bg-brand/10 text-brand flex items-center justify-center group-hover:shadow-[0_0_15px_var(--color-glow)] transition-shadow">
                 {service.icon}
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-webato-muted leading-relaxed">{service.description}</p>
+                <p className="text-muted leading-relaxed">{service.description}</p>
               </div>
             </motion.div>
           ))}

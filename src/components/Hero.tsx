@@ -1,87 +1,100 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Smartphone, Code2, Rocket } from 'lucide-react';
+import { FolderOpen, Play, Sparkles, Puzzle, MessageSquare } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-webato-secondary/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Stars/Particles */}
+        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-white rounded-full shadow-[0_0_10px_#fff]"></div>
+        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-brand rounded-full shadow-[0_0_15px_var(--color-brand)]"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-white rounded-full shadow-[0_0_10px_#fff]"></div>
+        
+        {/* Curved Glowing lines using SVG */}
+        <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M-10,50 Q40,30 110,70" fill="none" stroke="var(--color-brand)" strokeWidth="0.2" className="opacity-40" style={{ filter: 'drop-shadow(0 0 2px var(--color-brand))' }} />
+          <path d="M-10,80 Q50,100 110,40" fill="none" stroke="var(--color-brand)" strokeWidth="0.1" className="opacity-30" style={{ filter: 'drop-shadow(0 0 2px var(--color-brand))' }} />
+        </svg>
+        
+        {/* Large Glows */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-brand/10 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[800px] h-[800px] bg-brand/10 rounded-full blur-[150px]"></div>
+      </div>
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-webato-accent mb-8"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-left"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-webato-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-webato-accent"></span>
-            </span>
-            Digital Product & Growth Studio
-          </motion.div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-6 leading-[1.15] text-white">
+              Construímos<br/>
+              <span className="text-brand">Produtos Digitais</span><br/>
+              Que Crescem
+            </h1>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
-          >
-            Construímos Produtos Digitais <span className="text-transparent bg-clip-text bg-gradient-to-r from-webato-secondary to-webato-accent">Que Crescem</span>
-          </motion.h1>
+            <p className="text-lg md:text-xl text-muted mb-10 max-w-lg">
+              Apps, SAAS e soluções com IA — do conceito ao lançamento.
+            </p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl text-webato-muted mb-10 max-w-2xl mx-auto"
-          >
-            Apps, SaaS e soluções com IA — do conceito ao lançamento na Play Store e Web.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <a
-              href="#produtos"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-webato-secondary hover:bg-blue-500 text-white font-medium transition-all flex items-center justify-center gap-2 group"
-            >
-              Ver Produtos
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#contato"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium transition-all flex items-center justify-center"
-            >
-              Falar com a Webato
-            </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-white/10"
-          >
-            <div className="flex flex-col items-center justify-center gap-2">
-              <Smartphone className="text-webato-muted" size={24} />
-              <span className="text-sm font-medium text-webato-light">Produtos em Produção</span>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
+              <a
+                href="#produtos"
+                className="px-8 py-3.5 rounded-lg border border-brand text-white font-medium transition-all hover:bg-brand/10 text-center w-full sm:w-auto"
+              >
+                Ver Produtos
+              </a>
+              <a
+                href="#contato"
+                className="px-8 py-3.5 rounded-lg border border-brand text-white font-medium transition-all flex items-center justify-center gap-2 w-full sm:w-auto hover:bg-brand/10"
+              >
+                <FolderOpen size={18} className="text-white" />
+                Falar Conosco
+              </a>
             </div>
-            <div className="flex flex-col items-center justify-center gap-2">
-              <Rocket className="text-webato-muted" size={24} />
-              <span className="text-sm font-medium text-webato-light">Publicação Play Store</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2">
-              <Code2 className="text-webato-muted" size={24} />
-              <span className="text-sm font-medium text-webato-light">Growth e Monetização</span>
+
+            <div className="flex flex-wrap gap-3">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-xs font-medium text-muted">
+                <Puzzle size={14} className="text-brand" />
+                Produtos prontos para produção
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-xs font-medium text-brand">
+                <Play size={14} className="text-brand" fill="currentColor" />
+                Publicação na Play Store Ready
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-xs font-medium text-muted">
+                <Sparkles size={14} className="text-brand" />
+                IA aplicade
+              </div>
             </div>
           </motion.div>
+
+          {/* Right Mockups */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative w-full mt-12 lg:mt-0 flex justify-center items-center"
+          >
+            <div className="relative flex justify-center items-center w-full">
+              {/* Glow extra */}
+              <div className="absolute w-[70%] h-[60%] bg-[radial-gradient(circle,rgba(255,85,0,0.55),transparent_65%)] blur-[30px] z-0 pointer-events-none"></div>
+              
+              <img
+                src="/mockups/hero-mockup.png"
+                alt="Mockups WebAto Studio"
+                className="relative z-10 w-full max-w-[780px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.75)] animate-float"
+                loading="eager"
+              />
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
