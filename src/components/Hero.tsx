@@ -4,7 +4,7 @@ import { FolderOpen, Play, Sparkles, Puzzle, MessageSquare } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-[100svh] flex lg:items-center items-start pt-32 lg:pt-24 pb-12 overflow-hidden">
+    <section id="home" className="relative min-h-[100svh] flex items-center justify-center pt-24 pb-12 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Stars/Particles */}
@@ -23,15 +23,14 @@ export function Hero() {
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[800px] h-[800px] bg-brand/10 rounded-full blur-[150px]"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10 w-full flex flex-col items-center justify-center text-center">
           
-          {/* Left Content */}
+          {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-left"
+            className="flex flex-col items-center"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-6 leading-[1.15] text-white">
               Construímos<br/>
@@ -43,7 +42,7 @@ export function Hero() {
               Apps, SAAS e soluções com IA — do conceito ao lançamento.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full">
               <a
                 href="#produtos"
                 className="px-8 py-3.5 rounded-lg border border-brand text-white font-medium transition-all hover:bg-brand/10 text-center w-full sm:w-auto"
@@ -61,7 +60,7 @@ export function Hero() {
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-xs font-medium text-muted">
                 <Puzzle size={14} className="text-brand" />
                 Produtos prontos para produção
@@ -77,31 +76,6 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Mockups */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative w-full mt-12 lg:mt-0 flex justify-center items-center"
-          >
-            <div className="relative flex justify-center items-center w-full">
-              {/* Glow extra */}
-              <div className="absolute w-[70%] h-[60%] bg-[radial-gradient(circle,rgba(255,85,0,0.55),transparent_65%)] blur-[30px] z-0 pointer-events-none"></div>
-              
-              <img
-                src="/mockups/hero-mockup.png"
-                alt="Mockups WebAto Studio"
-                className="relative z-10 w-full max-w-[780px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.75)] animate-float"
-                loading="eager"
-                onError={(e) => {
-                  // Se a imagem falhar (ex: arquivo vazio), mostra um placeholder para não quebrar o layout
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop";
-                }}
-              />
-            </div>
-          </motion.div>
-
-        </div>
       </div>
     </section>
   );
