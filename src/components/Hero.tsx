@@ -51,7 +51,9 @@ export function Hero() {
                 Ver Produtos
               </a>
               <a
-                href="#contato"
+                href="https://api.whatsapp.com/send?phone=5511945496055"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-lg border border-brand text-white font-medium transition-all flex items-center justify-center gap-2 w-full sm:w-auto hover:bg-brand/10"
               >
                 <FolderOpen size={18} className="text-white" />

@@ -1,27 +1,27 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Layers, Rocket, BrainCircuit, Target } from 'lucide-react';
+import { Layers, Rocket, BrainCircuit, Target, Megaphone, Smartphone } from 'lucide-react';
 
 const services = [
   {
-    title: 'Product Development',
+    title: 'Marketing Digital',
+    description: 'Estratégias completas para impulsionar seu negócio digitalmente, com foco em resultados e conversão.',
+    icon: <Megaphone size={28} />,
+  },
+  {
+    title: 'Desenvolvimento de Produtos',
     description: 'MVPs, Apps, SaaS e sistemas sob medida construídos com arquitetura moderna e escalável.',
     icon: <Layers size={28} />,
   },
   {
-    title: 'Launch & Growth',
-    description: 'Publicação na Play Store, estruturação de planos, integração de pagamentos e monetização.',
-    icon: <Rocket size={28} />,
+    title: 'Gestão de Redes Sociais',
+    description: 'Posicionamento de mercado, branding técnico e construção de autoridade para produtos digitais.',
+    icon: <Smartphone size={28} />,
   },
   {
-    title: 'AI Applied',
+    title: 'Soluções com IA',
     description: 'Automação, IA generativa e ferramentas inteligentes integradas ao seu modelo de negócio.',
     icon: <BrainCircuit size={28} />,
-  },
-  {
-    title: 'Estratégia Digital',
-    description: 'Posicionamento de mercado, branding técnico e construção de autoridade para produtos digitais.',
-    icon: <Target size={28} />,
   },
 ];
 
@@ -30,9 +30,9 @@ export function Services() {
     <section id="servicos" className="py-24 bg-surface border-y border-border">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">O Que Fazemos</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">Nossos Serviços</h2>
           <p className="text-muted text-lg">
-            A WebAto é um estúdio de produtos digitais focado em engenharia, crescimento e inovação.
+            A WebAto é uma Agência de Marketing Digital e Estúdio de Produtos. Tudo o que você precisa para impulsionar seu negócio digitalmente.
           </p>
         </div>
 

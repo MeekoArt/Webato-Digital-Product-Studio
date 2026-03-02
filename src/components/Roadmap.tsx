@@ -8,7 +8,7 @@ export function Roadmap() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Roadmap Público</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">Roadmap Público</h2>
             <p className="text-muted text-lg mb-8">
               Transparência no que estamos construindo. Acompanhe a evolução dos nossos produtos.
             </p>

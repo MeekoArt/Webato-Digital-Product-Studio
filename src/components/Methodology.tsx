@@ -14,7 +14,7 @@ export function Methodology() {
     <section id="metodo" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Nosso Método</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">Nosso Método</h2>
           <p className="text-muted text-lg max-w-2xl">
             Um processo validado para transformar ideias em produtos reais e escaláveis.
           </p>

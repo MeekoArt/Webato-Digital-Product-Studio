@@ -34,9 +34,9 @@ export function Footer() {
             <span className="text-border">|</span>
             <a href="mailto:contato@webatoagency.com" className="hover:text-brand transition-colors">contato@webatoagency.com</a>
             <div className="flex gap-3 ml-4">
-              <a href="#" className="text-brand hover:text-brand-2 transition-colors"><Twitter size={16} /></a>
-              <a href="#" className="text-brand hover:text-brand-2 transition-colors"><Instagram size={16} /></a>
-              <a href="#" className="text-brand hover:text-brand-2 transition-colors"><Mail size={16} /></a>
+              <a href="https://api.whatsapp.com/send?phone=5511945496055" target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-2 transition-colors"><Twitter size={16} /></a>
+              <a href="https://www.instagram.com/webato_agency/" target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-2 transition-colors"><Instagram size={16} /></a>
+              <a href="mailto:contato@webatoagency.com" className="text-brand hover:text-brand-2 transition-colors"><Mail size={16} /></a>
             </div>
           </div>
         </div>

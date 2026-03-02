@@ -53,7 +53,9 @@ export function Navbar() {
             ))}
           </ul>
           <a
-            href="#contato"
+            href="https://api.whatsapp.com/send?phone=5511945496055"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-2.5 rounded-lg border border-brand text-white text-sm font-medium transition-all hover:bg-brand/10"
           >
             Falar Conosco
@@ -92,7 +94,9 @@ export function Navbar() {
               ))}
               <li className="pt-4 mt-2 border-t border-border">
                 <a
-                  href="#contato"
+                  href="https://api.whatsapp.com/send?phone=5511945496055"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-center px-5 py-3 rounded-lg border border-brand text-brand font-medium hover:bg-brand/10 transition-colors"
                 >

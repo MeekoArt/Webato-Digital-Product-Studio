@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export function Manifesto() {
   return (
-    <section id="manifesto" className="py-32 relative">
+    <section id="sobre" className="py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand/5 pointer-events-none" />
       <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
         <motion.div
@@ -12,7 +12,7 @@ export function Manifesto() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-sm font-bold tracking-widest uppercase text-brand mb-12">Manifesto</h2>
+          <h2 className="text-sm font-bold tracking-widest uppercase text-brand mb-12">Sobre a WebAto</h2>
           
           <div className="space-y-8 text-2xl md:text-4xl font-medium tracking-tight leading-tight mb-16">
             <p className="text-white">
@@ -30,9 +30,11 @@ export function Manifesto() {
           </div>
 
           <div className="mt-16 pt-12 border-t border-border">
-            <h3 className="text-2xl font-bold mb-6">Quer um produto assim?</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Pronto para impulsionar seu negócio?</h3>
             <a
-              href="#contato"
+              href="https://api.whatsapp.com/send?phone=5511945496055"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex px-8 py-4 rounded-full bg-gradient-to-r from-brand to-brand-2 hover:from-brand-2 hover:to-brand text-white font-medium transition-all shadow-[0_0_20px_var(--color-glow)]"
             >
               Fale com a WebAto

@@ -15,12 +15,10 @@ export default function App() {
       <main>
         <Hero />
         <Products />
-        {/*
         <Services />
         <Methodology />
         <Roadmap />
         <Manifesto />
-        */}
       </main>
       <Footer />
     </div>
