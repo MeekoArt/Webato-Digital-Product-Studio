@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export function Manifesto() {
   return (
-    <section id="sobre" className="py-32 relative">
+    <section id="sobre" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand/5 pointer-events-none" />
       <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
         <motion.div

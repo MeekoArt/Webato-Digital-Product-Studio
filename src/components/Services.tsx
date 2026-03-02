@@ -44,7 +44,7 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex gap-6 p-6 rounded-2xl hover:bg-surface-2 transition-colors border border-transparent hover:border-border group"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 rounded-2xl hover:bg-surface-2 transition-colors border border-transparent hover:border-border group text-center sm:text-left items-center sm:items-start"
             >
               <div className="shrink-0 w-14 h-14 rounded-xl bg-brand/10 text-brand flex items-center justify-center group-hover:shadow-[0_0_15px_var(--color-glow)] transition-shadow">
                 {service.icon}

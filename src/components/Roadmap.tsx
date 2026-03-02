@@ -6,7 +6,7 @@ export function Roadmap() {
   return (
     <section id="roadmap" className="py-24 bg-surface border-y border-border">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">Roadmap Público</h2>
             <p className="text-muted text-lg mb-8">

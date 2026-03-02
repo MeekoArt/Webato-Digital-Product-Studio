@@ -21,10 +21,12 @@ export function Methodology() {
         </div>
 
         <div className="relative">
-          {/* Connecting Line */}
+          {/* Connecting Line Desktop */}
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-border -translate-y-1/2" />
+          {/* Connecting Line Mobile */}
+          <div className="md:hidden absolute top-0 left-8 w-px h-full bg-border" />
           
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-8">
             {steps.map((step, index) => (
               <motion.div
                 key={step.num}
@@ -32,13 +34,15 @@ export function Methodology() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative z-10 flex flex-col items-start md:items-center text-left md:text-center group"
+                className="relative z-10 flex flex-row md:flex-col items-start md:items-center text-left md:text-center group gap-6 md:gap-0"
               >
-                <div className="w-16 h-16 rounded-full bg-bg border-2 border-border flex items-center justify-center mb-6 group-hover:border-brand group-hover:text-brand transition-colors group-hover:shadow-[0_0_15px_var(--color-glow)]">
+                <div className="shrink-0 w-16 h-16 rounded-full bg-bg border-2 border-border flex items-center justify-center md:mb-6 group-hover:border-brand group-hover:text-brand transition-colors group-hover:shadow-[0_0_15px_var(--color-glow)]">
                   <span className="text-xl font-bold font-mono">{step.num}</span>
                 </div>
-                <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                <p className="text-sm text-muted">{step.desc}</p>
+                <div>
+                  <h3 className="text-lg font-bold mb-2 md:mb-2 mt-1 md:mt-0">{step.title}</h3>
+                  <p className="text-sm text-muted">{step.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
