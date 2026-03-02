@@ -13,6 +13,7 @@ const products = [
     highlight: false,
     titleColor: 'text-white',
     platformColor: 'text-brand',
+    link: 'https://croquiia.base44.app/',
   },
   {
     name: 'StoryVerse\nForge',
@@ -89,13 +90,28 @@ export function Products() {
               <div className="mt-auto w-full">
                 <p className={`text-sm mb-8 ${product.platformColor}`}>{product.platforms}</p>
                 
-                <button className={`w-full py-3 rounded-xl font-medium transition-all ${
-                  product.buttonStyle === 'outline-brand' 
-                    ? 'bg-transparent border border-brand text-white hover:bg-brand/10' 
-                    : 'bg-transparent border border-border text-muted hover:border-muted-2'
-                }`}>
-                  {product.buttonText}
-                </button>
+                {product.link ? (
+                  <a 
+                    href={product.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block w-full py-3 rounded-xl font-medium transition-all ${
+                      product.buttonStyle === 'outline-brand' 
+                        ? 'bg-transparent border border-brand text-white hover:bg-brand/10' 
+                        : 'bg-transparent border border-border text-muted hover:border-muted-2'
+                    }`}
+                  >
+                    {product.buttonText}
+                  </a>
+                ) : (
+                  <button className={`w-full py-3 rounded-xl font-medium transition-all ${
+                    product.buttonStyle === 'outline-brand' 
+                      ? 'bg-transparent border border-brand text-white hover:bg-brand/10' 
+                      : 'bg-transparent border border-border text-muted hover:border-muted-2'
+                  }`}>
+                    {product.buttonText}
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}

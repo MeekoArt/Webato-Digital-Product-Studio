@@ -4,7 +4,7 @@ import { FolderOpen, Play, Sparkles, Puzzle, MessageSquare } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+    <section id="home" className="relative min-h-[100svh] flex lg:items-center items-start pt-32 lg:pt-24 pb-12 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Stars/Particles */}
@@ -33,7 +33,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="text-left"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-6 leading-[1.15] text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-6 leading-[1.15] text-white">
               Construímos<br/>
               <span className="text-brand">Produtos Digitais</span><br/>
               Que Crescem
@@ -91,6 +91,10 @@ export function Hero() {
                 alt="Mockups WebAto Studio"
                 className="relative z-10 w-full max-w-[780px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.75)] animate-float"
                 loading="eager"
+                onError={(e) => {
+                  // Se a imagem falhar (ex: arquivo vazio), mostra um placeholder para não quebrar o layout
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop";
+                }}
               />
             </div>
           </motion.div>
