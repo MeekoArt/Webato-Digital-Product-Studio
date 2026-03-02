@@ -36,7 +36,7 @@ export function Footer() {
           </div>
           <div className="flex gap-4">
             <a href="https://api.whatsapp.com/send?phone=5511945496055" target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-2 transition-colors"><Twitter size={18} /></a>
-            <a href="https://www.instagram.com/webato_agency/" target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-2 transition-colors"><Instagram size={18} /></a>
+            <a href="https://www.instagram.com/webato_studio?igsh=cXAyeHFicXdwMjg0" target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-2 transition-colors"><Instagram size={18} /></a>
             <a href="mailto:contato@webatoagency.com" className="text-brand hover:text-brand-2 transition-colors"><Mail size={18} /></a>
           </div>
         </div>
