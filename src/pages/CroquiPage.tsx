@@ -57,14 +57,24 @@ export function CroquiPage() {
             </div>
 
             <div className="flex flex-col items-center justify-center gap-4 mb-8 w-full">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdTu50yM4cUoZlXwcu85eIWawnSZP2yAKSXdxPu1ZSk7BYMhw/viewform?pli=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 rounded-xl bg-brand text-white font-bold text-lg transition-all hover:bg-brand-2 shadow-[0_0_20px_var(--color-glow)] flex items-center justify-center gap-2 w-full sm:w-auto"
-              >
-                🚀 Quero participar do teste
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdTu50yM4cUoZlXwcu85eIWawnSZP2yAKSXdxPu1ZSk7BYMhw/viewform?pli=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-xl bg-brand text-white font-bold text-lg transition-all hover:bg-brand-2 shadow-[0_0_20px_var(--color-glow)] flex items-center justify-center gap-2 w-full sm:w-auto"
+                >
+                  🚀 Quero participar do teste
+                </a>
+                <a
+                  href="https://croquiia.base44.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-xl border border-brand text-white font-bold text-lg transition-all hover:bg-brand/10 flex items-center justify-center gap-2 w-full sm:w-auto"
+                >
+                  Site Oficial
+                </a>
+              </div>
               <p className="text-sm text-muted font-medium">🔥 Já temos 7/20 vagas preenchidas</p>
             </div>
           </motion.div>

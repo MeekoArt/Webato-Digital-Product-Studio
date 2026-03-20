@@ -6,27 +6,45 @@ import { Link, useLocation } from 'react-router-dom';
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
   const isCroquiPage = location.pathname === '/croqui';
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      const sections = isCroquiPage
+        ? ['croqui-hero', 'croqui', 'recrutamento']
+        : ['home', 'produtos', 'servicos', 'metodo', 'roadmap'];
+
+      let current = sections[0];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            current = section;
+          }
+        }
+      }
+      setActiveSection(current);
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on mount
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isCroquiPage]);
 
   const navLinks = isCroquiPage ? [
-    { name: 'Início', href: '/', active: false },
-    { name: 'O que é', href: '#croqui', active: true },
-    { name: 'Acesso Antecipado', href: '#recrutamento' },
+    { name: 'Início', href: '#croqui-hero', id: 'croqui-hero' },
+    { name: 'O que é', href: '#croqui', id: 'croqui' },
+    { name: 'Acesso Antecipado', href: '#recrutamento', id: 'recrutamento' },
   ] : [
-    { name: 'Home', href: '#home', active: true },
-    { name: 'Produtos', href: '#produtos' },
-    { name: 'Serviços', href: '#servicos' },
-    { name: 'Método', href: '#metodo' },
-    { name: 'Roadmap', href: '#roadmap' },
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'Produtos', href: '#produtos', id: 'produtos' },
+    { name: 'Serviços', href: '#servicos', id: 'servicos' },
+    { name: 'Método', href: '#metodo', id: 'metodo' },
+    { name: 'Roadmap', href: '#roadmap', id: 'roadmap' },
   ];
 
   return (
@@ -50,10 +68,10 @@ export function Navbar() {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className={`text-sm font-medium transition-colors relative group ${link.active ? 'text-white' : 'text-muted hover:text-white'}`}
+                  className={`text-sm font-medium transition-colors relative group ${activeSection === link.id ? 'text-white' : 'text-muted hover:text-white'}`}
                 >
                   {link.name}
-                  <span className={`absolute -bottom-2 left-0 h-0.5 bg-brand transition-all ${link.active ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                  <span className={`absolute -bottom-2 left-0 h-0.5 bg-brand transition-all ${activeSection === link.id ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                 </a>
               </li>
             ))}
@@ -92,7 +110,7 @@ export function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block text-lg font-medium transition-colors ${link.active ? 'text-brand' : 'text-muted hover:text-white'}`}
+                    className={`block text-lg font-medium transition-colors ${activeSection === link.id ? 'text-brand' : 'text-muted hover:text-white'}`}
                   >
                     {link.name}
                   </a>
