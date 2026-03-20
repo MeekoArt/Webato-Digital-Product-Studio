@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MonitorPlay, Feather, Box } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const products = [
   {
@@ -8,23 +9,25 @@ const products = [
     description: 'Geração automatizada\nde croquis tecnicos',
     platforms: 'Android + Web',
     icon: <MonitorPlay size={40} strokeWidth={1.5} />,
-    buttonText: 'Ver Produto',
+    buttonText: 'Participar do Teste',
     buttonStyle: 'outline-brand',
-    highlight: false,
+    highlight: true,
+    badge: 'ACESSO ANTECIPADO',
     titleColor: 'text-white',
     platformColor: 'text-brand',
-    link: 'https://croquiia.base44.app/',
+    link: '/croqui',
+    isInternal: true,
   },
   {
     name: 'StoryVerse\nForge',
+    subtitle: '(Em breve)',
     description: 'Web App',
-    platforms: 'Atualização: 02/03/2024',
+    platforms: 'Em desenvolvimento',
     icon: <Feather size={48} strokeWidth={1.5} className="text-brand drop-shadow-[0_0_15px_var(--color-brand)]" />,
-    buttonText: 'Ver Produto',
-    buttonStyle: 'outline-brand',
-    highlight: true,
-    badge: 'NOVO ITEM',
-    titleColor: 'text-white',
+    buttonText: 'Em breve',
+    buttonStyle: 'outline-muted',
+    highlight: false,
+    titleColor: 'text-brand',
     platformColor: 'text-muted-2',
   },
   {
@@ -90,7 +93,18 @@ export function Products() {
               <div className="mt-auto w-full">
                 <p className={`text-sm mb-8 ${product.platformColor}`}>{product.platforms}</p>
                 
-                {product.link ? (
+                {product.isInternal ? (
+                  <Link 
+                    to={product.link}
+                    className={`block w-full py-3 rounded-xl font-medium transition-all ${
+                      product.buttonStyle === 'outline-brand' 
+                        ? 'bg-transparent border border-brand text-white hover:bg-brand/10' 
+                        : 'bg-transparent border border-border text-muted hover:border-muted-2'
+                    }`}
+                  >
+                    {product.buttonText}
+                  </Link>
+                ) : product.link ? (
                   <a 
                     href={product.link}
                     target="_blank"

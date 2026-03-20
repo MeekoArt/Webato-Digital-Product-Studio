@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { FolderOpen, Play, Sparkles, Puzzle, MessageSquare } from 'lucide-react';
+import { FolderOpen, Play, Sparkles, Puzzle } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -50,7 +50,7 @@ export function Hero() {
                 Ver Produtos
               </a>
               <a
-                href="https://api.whatsapp.com/send?phone=5511945496055"
+                href="https://www.instagram.com/webato_studio?igsh=cXAyeHFicXdwMjg0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-lg border border-brand text-white font-medium transition-all flex items-center justify-center gap-2 w-full sm:w-auto hover:bg-brand/10"
@@ -71,7 +71,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-xs font-medium text-muted">
                 <Sparkles size={14} className="text-brand" />
-                IA aplicade
+                IA aplicada
               </div>
             </div>
           </motion.div>

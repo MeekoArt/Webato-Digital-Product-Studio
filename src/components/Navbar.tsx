@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Link, useLocation } from 'react-router-dom';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isCroquiPage = location.pathname === '/croqui';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,13 +17,16 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks = isCroquiPage ? [
+    { name: 'Início', href: '/', active: false },
+    { name: 'O que é', href: '#croqui', active: true },
+    { name: 'Acesso Antecipado', href: '#recrutamento' },
+  ] : [
     { name: 'Home', href: '#home', active: true },
     { name: 'Produtos', href: '#produtos' },
+    { name: 'Serviços', href: '#servicos' },
     { name: 'Método', href: '#metodo' },
     { name: 'Roadmap', href: '#roadmap' },
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'Contato', href: '#contato' },
   ];
 
   return (
@@ -30,12 +36,12 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="#home" className="flex flex-col group">
+        <Link to="/" className="flex flex-col group">
           <div className="flex items-center text-3xl font-heading font-bold tracking-tighter text-white">
             WEBAT<span className="relative">O<ArrowUpRight className="absolute -top-1 -right-4 text-brand transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" size={24} strokeWidth={3} /></span>
           </div>
           <span className="text-[0.65rem] tracking-[0.3em] text-brand uppercase mt-0">STUDIO</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -53,12 +59,12 @@ export function Navbar() {
             ))}
           </ul>
           <a
-            href="https://api.whatsapp.com/send?phone=5511945496055"
+            href={isCroquiPage ? "https://docs.google.com/forms/d/e/1FAIpQLSdTu50yM4cUoZlXwcu85eIWawnSZP2yAKSXdxPu1ZSk7BYMhw/viewform?pli=1" : "https://www.instagram.com/webato_studio?igsh=cXAyeHFicXdwMjg0"}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-2.5 rounded-lg border border-brand text-white text-sm font-medium transition-all hover:bg-brand/10"
           >
-            Falar Conosco
+            {isCroquiPage ? "Participar do Teste" : "Falar Conosco"}
           </a>
         </div>
 
@@ -94,13 +100,13 @@ export function Navbar() {
               ))}
               <li className="pt-4 mt-2 border-t border-border">
                 <a
-                  href="https://api.whatsapp.com/send?phone=5511945496055"
+                  href={isCroquiPage ? "https://docs.google.com/forms/d/e/1FAIpQLSdTu50yM4cUoZlXwcu85eIWawnSZP2yAKSXdxPu1ZSk7BYMhw/viewform?pli=1" : "https://www.instagram.com/webato_studio?igsh=cXAyeHFicXdwMjg0"}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-center px-5 py-3 rounded-lg border border-brand text-brand font-medium hover:bg-brand/10 transition-colors"
                 >
-                  Falar Conosco
+                  {isCroquiPage ? "Participar do Teste" : "Falar Conosco"}
                 </a>
               </li>
             </ul>

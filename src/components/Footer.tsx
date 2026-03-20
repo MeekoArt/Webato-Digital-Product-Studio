@@ -30,14 +30,13 @@ export function Footer() {
         
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted">
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center">
-            <span>© 2026 Webato</span>
-            <span className="hidden sm:inline text-border">|</span>
-            <a href="mailto:contato@webatoagency.com" className="hover:text-brand transition-colors">contato@webatoagency.com</a>
+            <span>© 2026 Webato Studio</span>
           </div>
           <div className="flex gap-4">
-            <a href="https://api.whatsapp.com/send?phone=5511945496055" target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-2 transition-colors"><Twitter size={18} /></a>
-            <a href="https://www.instagram.com/webato_studio?igsh=cXAyeHFicXdwMjg0" target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-2 transition-colors"><Instagram size={18} /></a>
-            <a href="mailto:contato@webatoagency.com" className="text-brand hover:text-brand-2 transition-colors"><Mail size={18} /></a>
+            <a href="https://www.instagram.com/webato_studio?igsh=cXAyeHFicXdwMjg0" target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-2 transition-colors flex items-center gap-2">
+              <Instagram size={18} />
+              <span className="text-sm font-medium">@webato_studio</span>
+            </a>
           </div>
         </div>
       </div>

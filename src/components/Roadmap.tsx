@@ -8,7 +8,7 @@ export function Roadmap() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">Roadmap Público</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">🔬 O que estamos construindo</h2>
             <p className="text-muted text-lg mb-8">
               Transparência no que estamos construindo. Acompanhe a evolução dos nossos produtos.
             </p>
@@ -19,16 +19,16 @@ export function Roadmap() {
               </h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="text-brand shrink-0 mt-0.5" size={20} />
+                  <CircleDashed className="text-brand shrink-0 mt-0.5" size={20} />
                   <span className="text-text">Otimizações de performance no Croqui.IA</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="text-brand shrink-0 mt-0.5" size={20} />
+                  <CircleDashed className="text-brand shrink-0 mt-0.5" size={20} />
                   <span className="text-text">Expansão do sistema Enterprise</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CircleDashed className="text-muted shrink-0 mt-0.5" size={20} />
-                  <span className="text-muted">Ajustes no Play Billing</span>
+                  <CircleDashed className="text-brand shrink-0 mt-0.5" size={20} />
+                  <span className="text-text">Ajustes no Play Billing</span>
                 </li>
               </ul>
             </div>
